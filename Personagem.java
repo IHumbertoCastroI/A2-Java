@@ -1,31 +1,30 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
+public class Personagem {
+    private String nome;
+    private int idade;
+    private String formacao;
 
-public class Personagem extends ComponentesDoJogo{
-
-    @Override
-    public void salvar(BufferedWriter writer) throws IOException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'salvar'");
+    public Personagem(String nome, int idade, String formacao) {
+        this.nome = nome;
+        this.idade = idade;
+        this.formacao = formacao;
     }
 
-    @Override
-    public void carregar(BufferedReader reader) throws IOException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'carregar'");
+    public String getNome() {
+        return nome;
     }
 
-    @Override
-    public void renderizar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'renderizar'");
+    public int getIdade() {
+        return idade;
     }
 
-    @Override
-    public void atualizar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+    public String getFormacao() {
+        return formacao;
     }
-    
+
+    public void exibirStatus() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Formação: " + formacao);
+    }
 }
+
