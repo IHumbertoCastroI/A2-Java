@@ -1,13 +1,2 @@
-Personagem
-Caio
-14
-merda
-Mochila
-Escudo
 
-Sala
-Sala Principal
-0
-1
-0
 
