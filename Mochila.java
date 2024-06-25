@@ -25,7 +25,7 @@ public class Mochila implements Renderable, Saveable {
 
     @Override
     public void renderizar() {
-        System.out.println("Mochila:");
+        System.out.println("\nMochila:");
         for (String item : itens) {
             System.out.println("- " + item);
         }
@@ -33,7 +33,7 @@ public class Mochila implements Renderable, Saveable {
 
     @Override
     public void salvar(BufferedWriter writer) throws IOException {
-        writer.write("Mochila\n");
+        writer.write("\nMochila\n");
         for (String item : itens) {
             writer.write(item + "\n");
         }

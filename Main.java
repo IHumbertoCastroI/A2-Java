@@ -12,11 +12,11 @@ public class Main {
 
         while (running) {
             // Exibição do menu principal
-            System.out.println("Menu Principal:");
-            System.out.println("1. Iniciar Jogo");
+            System.out.println("\nMenu Principal:");
+            System.out.println("\n1. Iniciar Jogo");
             System.out.println("2. Carregar Jogo");
             System.out.println("3. Sair");
-            int opcao = console.lerInt("Escolha uma opção: ");
+            int opcao = console.lerInt("\nEscolha uma opção: ");
 
             switch (opcao) {
                 case 1:
@@ -39,10 +39,10 @@ public class Main {
 
     private static void iniciarJogo(Console console) {
         // Leitura dos dados do jogador para criar o personagem
-        System.out.println("Iniciando novo jogo!");
-        String nome = console.lerString("Digite o nome do seu personagem: ");
-        int idade = console.lerInt("Digite a idade do seu personagem: ");
-        String formacao = console.lerString("Digite a formação do seu personagem: ");
+        System.out.println("\nIniciando novo jogo!");
+        String nome = console.lerString("\nDigite o nome do seu personagem: ");
+        int idade = console.lerInt("\nDigite a idade do seu personagem: ");
+        String formacao = console.lerString("\nDigite a formação do seu personagem: ");
 
         // Criação do personagem com base nos inputs do jogador
         Personagem personagem = new Personagem(nome, idade, formacao);
@@ -51,7 +51,7 @@ public class Main {
         Mochila mochila = new Mochila();
 
         // Criação da sala
-        Sala sala = new Sala("Sala Principal");
+        Sala sala = new Sala("\nSala Principal");
 
         // Criação da janela do jogo e adição dos componentes
         Display display = new Display();
@@ -66,7 +66,7 @@ public class Main {
             display.render();
 
             // Escolha do canto da sala
-            int escolha = console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
+            int escolha = console.lerInt("\nDigite o número da cena para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
@@ -84,7 +84,7 @@ public class Main {
         // Criação do personagem e outros componentes
         Personagem personagem = new Personagem("", 0, ""); // Usando um construtor válido
         Mochila mochila = new Mochila();
-        Sala sala = new Sala("Sala Principal");
+        Sala sala = new Sala("\nSala Principal");
 
         carregarJogo(personagem, mochila, sala);
 
@@ -101,7 +101,7 @@ public class Main {
             display.render();
 
             // Escolha do canto da sala
-            int escolha = console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
+            int escolha = console.lerInt("\nDigite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
