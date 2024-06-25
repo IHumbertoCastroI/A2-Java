@@ -1,7 +1,10 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Mochila extends ComponentesDoJogo {
+public class Mochila implements Renderable, Saveable {
     private List<String> itens;
 
     public Mochila() {
@@ -28,10 +31,8 @@ public class Mochila extends ComponentesDoJogo {
         }
     }
 
-
-    // uso das interfaces de renderização e de salvamento para a mochila 
     @Override
-    public void salvar (BufferedWriter writer) throws IOException {
+    public void salvar(BufferedWriter writer) throws IOException {
         writer.write("Mochila\n");
         for (String item : itens) {
             writer.write(item + "\n");
@@ -48,7 +49,6 @@ public class Mochila extends ComponentesDoJogo {
         }
     }
 
-    @Override
     public void atualizar() {
         // Implementação para atualizar o estado da mochila, se necessário
     }
