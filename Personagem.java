@@ -1,36 +1,52 @@
-// Definição da classe Personagem
-public class Personagem {
-    // Atributos da classe Personagem
-    private String nome;     // Nome do personagem
-    private int idade;       // Idade do personagem
-    private String formacao; // Formação do personagem
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 
-    // Construtor da classe Personagem
+public class Personagem implements Renderable, Saveable {
+    private String nome;
+    private int idade;
+    private String formacao;
+
     public Personagem(String nome, int idade, String formacao) {
-        this.nome = nome;         // Inicializa o nome do personagem
-        this.idade = idade;       // Inicializa a idade do personagem
-        this.formacao = formacao; // Inicializa a formação do personagem
+        this.nome = nome;
+        this.idade = idade;
+        this.formacao = formacao;
     }
 
-    // Método para obter o nome do personagem
     public String getNome() {
-        return nome; // Retorna o nome do personagem
+        return nome;
     }
 
-    // Método para obter a idade do personagem
     public int getIdade() {
-        return idade; // Retorna a idade do personagem
+        return idade;
     }
 
-    // Método para obter a formação do personagem
     public String getFormacao() {
-        return formacao; // Retorna a formação do personagem
+        return formacao;
     }
 
-    // Método para exibir o status do personagem
-    public void exibirStatus() {
-        System.out.println("Nome: " + nome);         // Exibe o nome do personagem
-        System.out.println("Idade: " + idade);       // Exibe a idade do personagem
-        System.out.println("Formação: " + formacao); // Exibe a formação do personagem
+    @Override
+    public void renderizar() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Formação: " + formacao);
+    }
+
+    @Override
+    public void salvar(BufferedWriter writer) throws IOException {
+        writer.write("Personagem\n");
+        writer.write(nome + "\n");
+        writer.write(idade + "\n");
+        writer.write(formacao + "\n");
+    }
+
+    @Override
+    public void carregar(BufferedReader reader) throws IOException {
+        String line = reader.readLine();
+        if (line.equals("Personagem")) {
+            nome = reader.readLine();
+            idade = Integer.parseInt(reader.readLine());
+            formacao = reader.readLine();
+        }
     }
 }
