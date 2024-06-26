@@ -31,7 +31,7 @@ public class Main {
                                 " SSSSSSSSSSSSSSS   iiiiiiii nnnnnn    nnnnnn    uuuuuuuu  uuuuzzzzzzzzzzzzzzzzziiiiiiii         ttttttttttt   \r" + //
                                 "                                                                                                                                 \r" + //
                                 "                                                                                                                                 \r" + //
-                                "", 2);
+                                "",1 );
             Mensageiro.exibirMensagem("Menu Principal:\n", 50);
             Mensageiro.exibirMensagem("\n1. Iniciar Jogo", 50);
             Mensageiro.exibirMensagem("\n2. Carregar Jogo", 50);
@@ -47,18 +47,18 @@ public class Main {
                     break;
                 case 3:
                     running = false;
-                    Mensageiro.exibirMensagem("Saindo do jogo...", 50);
+                    Mensageiro.exibirMensagem("\n Saindo do jogo", 50);
+                    Mensageiro.exibirMensagem("\n ...", 50);
                     break;
                 default:
-                    Mensageiro.exibirMensagem("Opção inválida. Tente novamente.", 50);
+                    Mensageiro.exibirMensagem("\n Opção inválida. Tente novamente.", 50);
             }
         }
-
         console.fechar();
     }
 
     private static void iniciarJogo(Console console) {
-        Mensageiro.exibirMensagem("Iniciando novo jogo!", 50);
+        Mensageiro.exibirMensagem("Iniciando novo jogo!\n", 80);
         String nome = console.lerString("Digite o nome do seu personagem: ");
         int idade = console.lerInt("Digite a idade do seu personagem: ");
         String formacao = console.lerString("Digite a formação do seu personagem: ");
@@ -84,7 +84,7 @@ public class Main {
         while (jogando) {
             display.render();
 
-            int escolha = console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar, 5 para próxima sala, -1 para sair: ");
+            int escolha = console.lerInt("\n Digite o número do canto para explorar (0-2) / 3 para salvar / 4 para carregar / 5 para próxima sala \n -1 para sair");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
@@ -105,7 +105,7 @@ public class Main {
     }
 
     private static void carregarJogoMenu(Console console) {
-        Mensageiro.exibirMensagem("Carregando jogo...", 80);
+        Mensageiro.exibirMensagem("Carregando jogo...", 0);
         Personagem personagem = new Personagem("", 0, "");
         Mochila mochila = new Mochila();
         Sala sala = null; // Inicializa a sala como null para carregar do arquivo
@@ -179,7 +179,7 @@ public class Main {
             mochila.carregar(reader);
             sala.carregar(reader);
             Mensageiro.exibirMensagem("Jogo carregado com sucesso!", 50);
-        } catch (IOException e) {
+        } c1zatch (IOException e) { 
             Mensageiro.exibirMensagem("Erro ao carregar o jogo: " + e.getMessage(), 50);
         }
     }

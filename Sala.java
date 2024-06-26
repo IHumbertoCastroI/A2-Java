@@ -39,7 +39,7 @@ public abstract class Sala implements Saveable, Renderable {
         System.out.println("Sala: " + nome);
         for (int i = 0; i < cantos.length; i++) {
             String resolvido = cantosResolvidos[i] ? "(resolvido)" : "(não resolvido)";
-            System.out.println("  Canto " + i + ": " + cantos[i] + " " + resolvido);
+            System.out.println("  Cena " + i + ": " + cantos[i] + " " + resolvido);
         }
     }
 
