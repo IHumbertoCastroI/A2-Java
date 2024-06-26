@@ -7,10 +7,6 @@ Este repositório contém o código-fonte de um projeto de java para uma avalia�
 
 Um text-rpg cheio de referencias, composto de puzzles de matemática que levam o jogador a viver uma aventura linear. é possivel salvar o jogo e carregar ele novamente, voltando na sala em que o jogador salvou e todos os "itens" que ele ja coletou.
 
-#### Informações sobre as Classes e suas Relações:
-
-Explicação sobre as classes do projeto e como elas se relacionam (agregação, composição, associação).
-
 #### Como Executar o Projeto:
 
 No Vscode o proprio Java debugger vai fazer o trabalho. Só executar.
@@ -21,10 +17,6 @@ No Vscode o proprio Java debugger vai fazer o trabalho. Só executar.
 - Como Utilizar e criar as Interfaces "Saveavle" e "Renderable".
 - Criação de uma classe "LimpaTerminal" para limpar o terminal conforme o jogo acontece.
 - Como Salvar o progresso e armazenar os dados no arquivo txt e depois carrega-los novamente.
-
-#### Referências e Recursos:
-
-Quaisquer referências ou recursos adicionais utilizados no desenvolvimento do projeto.
 
 #### Funcionalidades Principais:
 
