@@ -179,7 +179,7 @@ public class Main {
             mochila.carregar(reader);
             sala.carregar(reader);
             Mensageiro.exibirMensagem("Jogo carregado com sucesso!", 50);
-        } c1zatch (IOException e) { 
+        } catch (IOException e) { 
             Mensageiro.exibirMensagem("Erro ao carregar o jogo: " + e.getMessage(), 50);
         }
     }
