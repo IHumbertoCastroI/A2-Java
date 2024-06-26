@@ -15,7 +15,9 @@ public class Console {
             leitor.next(); // Limpa a entrada inválida
             System.out.print(mensagem);
         }
-        return leitor.nextInt();
+        int valor = leitor.nextInt();
+        leitor.nextLine();
+        return valor;
     }
 
     public String lerString(String mensagem) {
