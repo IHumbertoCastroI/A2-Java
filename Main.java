@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-        Console console = new Console();
+        
         boolean running = true;
 
         while (running) {
@@ -36,14 +36,14 @@ public class Main {
             Mensageiro.exibirMensagem("\n1. Iniciar Jogo", 50);
             Mensageiro.exibirMensagem("\n2. Carregar Jogo", 50);
             Mensageiro.exibirMensagem("\n3. Sair", 50);
-            int opcao = console.lerInt("\n\nEscolha uma opção: ");
+            int opcao = Console.lerInt("\n\nEscolha uma opção: ");
 
             switch (opcao) {
                 case 1:
-                    iniciarJogo(console);
+                    iniciarJogo();
                     break;
                 case 2:
-                    carregarJogoMenu(console);
+                    carregarJogoMenu();
                     break;
                 case 3:
                     running = false;
@@ -54,14 +54,14 @@ public class Main {
                     Mensageiro.exibirMensagem("\n Opção inválida. Tente novamente.", 50);
             }
         }
-        console.fechar();
+        Console.fechar();
     }
 
-    private static void iniciarJogo(Console console) {
+    private static void iniciarJogo() {
         Mensageiro.exibirMensagem("Iniciando novo jogo!\n", 80);
-        String nome = console.lerString("Digite o nome do seu personagem: ");
-        int idade = console.lerInt("Digite a idade do seu personagem: ");
-        String formacao = console.lerString("Digite a formação do seu personagem: ");
+        String nome = Console.lerString("Digite o nome do seu personagem: ");
+        int idade = Console.lerInt("Digite a idade do seu personagem: ");
+        String formacao = Console.lerString("Digite a formação do seu personagem: ");
 
         Personagem personagem = new Personagem(nome, idade, formacao);
         Mochila mochila = new Mochila();
@@ -84,7 +84,7 @@ public class Main {
         while (jogando) {
             display.render();
 
-            int escolha = console.lerInt("\n Digite o número do canto para explorar (0-2) / 3 para salvar / 4 para carregar / 5 para próxima sala \n -1 para sair");
+            int escolha = Console.lerInt("\n Digite o número do canto para explorar (0-2) / 3 para salvar / 4 para carregar / 5 para próxima sala \n -1 para sair\n");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
@@ -104,7 +104,7 @@ public class Main {
         }
     }
 
-    private static void carregarJogoMenu(Console console) {
+    private static void carregarJogoMenu() {
         Mensageiro.exibirMensagem("Carregando jogo...", 0);
         Personagem personagem = new Personagem("", 0, "");
         Mochila mochila = new Mochila();
@@ -158,13 +158,13 @@ public class Main {
         while (jogando) {
             display.render();
     
-            int escolha = console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
+            int escolha = Console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
                 salvarJogo(personagem, mochila, sala);
             } else if (escolha == 4) {
-                carregarJogoMenu(console); // Reinicia o processo de carregamento
+                carregarJogoMenu(); // Reinicia o processo de carregamento
                 return; // Retorna para evitar a execução do restante do loop
             } else {
                 sala.resolverCanto(escolha, mochila);
