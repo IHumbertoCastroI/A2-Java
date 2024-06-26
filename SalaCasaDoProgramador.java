@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class SalaCasaDoProgramador extends Sala {
     public SalaCasaDoProgramador(Personagem personagem) {
@@ -12,8 +11,7 @@ public class SalaCasaDoProgramador extends Sala {
 
     @Override
     public void resolverCanto(int indice, Mochila mochila) {
-        Scanner scanner = new Scanner(System.in);
-
+        
         if (indice < 0 || indice >= cantos.length) {
             Mensageiro.exibirMensagem("\nCanto inválido.", 50);
             return;
@@ -61,7 +59,7 @@ public class SalaCasaDoProgramador extends Sala {
                                         "                      `!^\"'", 2);
                 Mensageiro.exibirMensagem("\n\nVocê acorda de madrugada, e na tela de seu computador tem email e que você acabou não lendo, você inspeciona o computador e descobre que no email existem uma senha infalivel contra IA.",50); 
                 Mensageiro.exibirMensagem ("Para desbloquear os documentos, resolva a senha simples a prova de IA: Qual é o próximo número na sequência 2, 4, 8, 16?\n", 50);
-                String resposta = scanner.nextLine();
+                String resposta = Console.nextLine();
                 if (resposta.equals("32")) {
                     Mensageiro.exibirMensagem("Correto! Você desbloqueou a mensagem, e imprimiu.", 50);
                     Mensageiro.exibirMensagem("\n\nComunicado Oficial do Governo: Preparação para o Apocalipse Zumbi\n",50);
@@ -79,7 +77,7 @@ public class SalaCasaDoProgramador extends Sala {
                 break;
             case 2:
                 Mensageiro.exibirMensagem("Para passar a noite você precisa preparar o um sistema de segurança, resolva o seguinte: Se um sensor é ativado a cada 5 segundos e você tem 6 sensores, quantas ativações ocorrem em 1 minuto?", 50);
-                resposta = scanner.nextLine();
+                resposta = Console.nextLine();
                 if (resposta.equals("72")) {
                     Mensageiro.exibirMensagem("Correto! Você configurou o sistema de segurança.", 50);
                     mochila.adicionarItem("Sistema de Segurança");

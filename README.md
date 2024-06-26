@@ -5,9 +5,7 @@ Este repositório contém o código-fonte de um projeto de java para uma avalia�
 
 #### Informações Gerais sobre o Projeto:
 
-Um text-rpg cheio de referencias, combosto de puzzles de matemática que levam o jogasdor a viver uma aventura linear. é possivel salvar o jogo e carregar ele novamente, voltando na sala em que o jogador salvou e todos os itens que ele ja coletou.
-
-Você pode viver a historia inteira sem coletar nada... Muito sem graça.
+Um text-rpg cheio de referencias, composto de puzzles de matemática que levam o jogador a viver uma aventura linear. é possivel salvar o jogo e carregar ele novamente, voltando na sala em que o jogador salvou e todos os "itens" que ele ja coletou.
 
 #### Informações sobre as Classes e suas Relações:
 
@@ -19,7 +17,9 @@ No Vscode o proprio Java debugger vai fazer o trabalho. Só executar.
 
 #### Uso do ChatGPT:
 
-Quando deparados com um recurso desconhecido por nós no java, pedimos ajuda ao chat
+- Ajuda na criação da classe "Mensageiro", em como criar o efeito de typing para o nosso jogo.
+- Como Utilizar e criar as Interfaces "Saveavle" e "Renderable".
+- Criação de uma classe "LimpaTerminal" para limpar o terminal conforme o jogo acontece.
 
 #### Referências e Recursos:
 

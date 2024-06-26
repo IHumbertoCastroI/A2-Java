@@ -26,4 +26,9 @@ public class Console {
     public void fechar() {
         scanner.close();
     }
+
+    public static String nextLine() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'nextLine'");
+    }
 }

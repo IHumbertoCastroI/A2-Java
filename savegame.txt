@@ -1,0 +1,22 @@
+Caio
+18
+Programador
+14
+Mensagem do Governo
+Alimentos e Água
+Sistema de Segurança
+Mapa da Cidade
+Rota Planejada
+Energia Restaurada
+Sistemas Operacionais
+Suprimentos do Metrô
+Registros Médicos
+Localização de Suprimentos
+Caminho Seguro
+Refúgio Fortificado
+Mantimentos Estocados
+Sobreviventes Coordenados
+false
+true
+true
+true
