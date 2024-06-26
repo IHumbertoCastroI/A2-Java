@@ -3,7 +3,7 @@ public class SalaCasaDoProgramador extends Sala {
     public SalaCasaDoProgramador(Personagem personagem) {
         super("Sua casa", personagem);
         cantos = new String[] {
-            "Inspecionar o computador",
+            "\nInspecionar o computador",
             "Verificar a despensa",
             "Preparar o sistema de segurança"
         };
@@ -23,7 +23,7 @@ public class SalaCasaDoProgramador extends Sala {
 
         switch (indice) {
             case 1:
-                Mensageiro.exibirMensagem("Você verifica a despensa e encontra alguns alimentos e água potável.", 50);
+                Mensageiro.exibirMensagem("\nVocê verifica a despensa e encontra alguns alimentos e água potável.", 50);
                 mochila.adicionarItem("Alimentos e Água");
                 break;
             case 0:
@@ -57,8 +57,8 @@ public class SalaCasaDoProgramador extends Sala {
                                         "                  `!988888888899fT|!^\"'\r\n" + //
                                         "                    `!9899fT|!^\"'\r\n" + //
                                         "                      `!^\"'", 2);
-                Mensageiro.exibirMensagem("\n\nVocê acorda de madrugada, e na tela de seu computador tem email e que você acabou não lendo, você inspeciona o computador e descobre que no email existem uma senha infalivel contra IA.",50); 
-                Mensageiro.exibirMensagem ("Para desbloquear os documentos, resolva a senha simples a prova de IA: Qual é o próximo número na sequência 2, 4, 8, 16?\n", 50);
+                Mensageiro.exibirMensagem("\n\nVocê acorda de madrugada, e na tela de seu computador tem email e que você acabou não lendo, você inspeciona o computador e descobre que no email existem uma senha infalivel contra IA.\n",50); 
+                Mensageiro.exibirMensagem ("\nPara desbloquear os documentos, resolva a senha simples a prova de IA: Qual é o próximo número na sequência 2, 4, 8, 16?\n", 50);
                 String resposta = Console.nextLine();
                 if (resposta.equals("32")) {
                     Mensageiro.exibirMensagem("Correto! Você desbloqueou a mensagem, e imprimiu.", 50);
@@ -76,7 +76,7 @@ public class SalaCasaDoProgramador extends Sala {
                 }
                 break;
             case 2:
-                Mensageiro.exibirMensagem("Para passar a noite você precisa preparar o um sistema de segurança, resolva o seguinte: Se um sensor é ativado a cada 5 segundos e você tem 6 sensores, quantas ativações ocorrem em 1 minuto?", 50);
+                Mensageiro.exibirMensagem("\nPara passar a noite você precisa preparar o um sistema de segurança, resolva o seguinte: Se um sensor é ativado a cada 5 segundos e você tem 6 sensores, quantas ativações ocorrem em 1 minuto?\n", 50);
                 resposta = Console.nextLine();
                 if (resposta.equals("72")) {
                     Mensageiro.exibirMensagem("Correto! Você configurou o sistema de segurança.", 50);

@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        boolean running = true;
+        boolean running = true; // Variável para controlar o loop principal
 
         while (running) {
             Mensageiro.exibirMensagem("\r\n" + //
@@ -58,10 +58,10 @@ public class Main {
     }
 
     private static void iniciarJogo() {
-        Mensageiro.exibirMensagem("Iniciando novo jogo!\n", 80);
-        String nome = Console.lerString("Digite o nome do seu personagem: ");
-        int idade = Console.lerInt("Digite a idade do seu personagem: ");
-        String formacao = Console.lerString("Digite a formação do seu personagem: ");
+        Mensageiro.exibirMensagem("\nIniciando novo jogo!\n", 80);
+        String nome = Console.lerString("\nDigite o nome do seu personagem: ");
+        int idade = Console.lerInt("\nDigite a idade do seu personagem: ");
+        String formacao = Console.lerString("\nDigite a formação do seu personagem: \n");
 
         Personagem personagem = new Personagem(nome, idade, formacao);
         Mochila mochila = new Mochila();
@@ -84,7 +84,7 @@ public class Main {
         while (jogando) {
             display.render();
 
-            int escolha = Console.lerInt("\n Digite o número do canto para explorar (0-2) / 3 para salvar / 4 para carregar / 5 para próxima sala \n -1 para sair\n");
+            int escolha = Console.lerInt("\n Digite o número do canto para explorar (0-2) \n / 3 para salvar / 4 para carregar / 5 para próxima sala \n -1 para sair\n");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
@@ -105,7 +105,7 @@ public class Main {
     }
 
     private static void carregarJogoMenu() {
-        Mensageiro.exibirMensagem("Carregando jogo...", 0);
+        Mensageiro.exibirMensagem("\nCarregando jogo...", 0);
         Personagem personagem = new Personagem("", 0, "");
         Mochila mochila = new Mochila();
         Sala sala = null; // Inicializa a sala como null para carregar do arquivo
@@ -158,7 +158,7 @@ public class Main {
         while (jogando) {
             display.render();
     
-            int escolha = Console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
+            int escolha = Console.lerInt("\n Digite o número do canto para explorar (0-2) \n / 3 para salvar / 4 para carregar / 5 para próxima sala \n -1 para sair\n");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
