@@ -20,6 +20,7 @@ No Vscode o proprio Java debugger vai fazer o trabalho. Só executar.
 - Ajuda na criação da classe "Mensageiro", em como criar o efeito de typing para o nosso jogo.
 - Como Utilizar e criar as Interfaces "Saveavle" e "Renderable".
 - Criação de uma classe "LimpaTerminal" para limpar o terminal conforme o jogo acontece.
+- Como Salvar o progresso e armazenar os dados no arquivo txt e depois carrega-los novamente.
 
 #### Referências e Recursos:
 
