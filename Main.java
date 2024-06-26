@@ -11,12 +11,32 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            // Exibição do menu principal
-            System.out.println("\nMenu Principal:");
-            System.out.println("\n1. Iniciar Jogo");
-            System.out.println("2. Carregar Jogo");
-            System.out.println("3. Sair");
-            int opcao = console.lerInt("\nEscolha uma opção: ");
+            Mensageiro.exibirMensagem("\r\n" + //
+                                "                                                                                                                                 \r" + //
+                                "   SSSSSSSSSSSSSSS   iiii                                                        iiii          tttt           \r" + //
+                                " SS░░░░░░░░░░░░░░░S i░░░░i                                                      i░░░░i      ttt░░░t           \r" + //
+                                "S░░░░░SSSSSS░░░░░░S  iiii                                                        iiii       t░░░░░t           \r" + //
+                                "S░░░░░S     SSSSSSS                                                                         t░░░░░t         1  \r" + //
+                                "S░░░░░S            iiiiiiinnnn  nnnnnnnn    uuuuuu    uuuuuu  zzzzzzzzzzzzzzzzziiiiiiittttttt░░░░░ttttttt     \r" + //
+                                "S░░░░░S            i░░░░░in░░░nn░░░░░░░░nn  u░░░░u    u░░░░u  z░░░░░░░░░░░░░░░░zi░░░░░it░░░░░░░░░░░░░░░░░t     \r" + //
+                                " S░░░░SSSS          i░░░░in░░░░░░░░░░░░░░nn u░░░░u    u░░░░u  z░░░░░░░░░░░░░░░z  i░░░░it░░░░░░░░░░░░░░░░░t     \r" + //
+                                "  SS░░░░░░SSSSS     i░░░░inn░░░░░░░░░░░░░░░nu░░░░u    u░░░░u  zzzzzzzz░░░░░░░z   i░░░░itttttt░░░░░░░tttttt     \r" + //
+                                "    SSS░░░░░░░░SS   i░░░░i  n░░░░░nnnn░░░░░nu░░░░u    u░░░░u        z░░░░░░z    i░░░░i      t░░░░░t           \r" + //
+                                "       SSSSSS░░░░S  i░░░░i  n░░░░n    n░░░░nu░░░░u    u░░░░u       z░░░░░░z     i░░░░i      t░░░░░t           \r" + //
+                                "            S░░░░░S i░░░░i  n░░░░n    n░░░░nu░░░░u    u░░░░u      z░░░░░░z      i░░░░i      t░░░░░t           \r" + //
+                                "            S░░░░░S i░░░░i  n░░░░n    n░░░░nu░░░░░uuuu░░░░░u     z░░░░░░z       i░░░░i      t░░░░░t    tttttte\r" + //
+                                "SSSSSSS     S░░░░░Si░░░░░░i n░░░░n    n░░░░nu░░░░░░░░░░░░░░░uu  z░░░░░░zzzzzzzzi░░░░░░i     t░░░░░tttt░░░░░░te\r" + //
+                                "S░░░░░░SSSSSS░░░░░Si░░░░░░i n░░░░n    n░░░░n u░░░░░░░░░░░░░░░u z░░░░░░░░░░░░░░zi░░░░░░i     tt░░░░░░░░░░░░░░t \r" + //
+                                "S░░░░░░░░░░░░░░░SS i░░░░░░i n░░░░n    n░░░░n  uu░░░░░░░░uu░░░uz░░░░░░░░░░░░░░░zi░░░░░░i       tt░░░░░░░░░░░tt \r" + //
+                                " SSSSSSSSSSSSSSS   iiiiiiii nnnnnn    nnnnnn    uuuuuuuu  uuuuzzzzzzzzzzzzzzzzziiiiiiii         ttttttttttt   \r" + //
+                                "                                                                                                                                 \r" + //
+                                "                                                                                                                                 \r" + //
+                                "", 2);
+            Mensageiro.exibirMensagem("Menu Principal:\n", 50);
+            Mensageiro.exibirMensagem("\n1. Iniciar Jogo", 50);
+            Mensageiro.exibirMensagem("\n2. Carregar Jogo", 50);
+            Mensageiro.exibirMensagem("\n3. Sair", 50);
+            int opcao = console.lerInt("\n\nEscolha uma opção: ");
 
             switch (opcao) {
                 case 1:
@@ -27,101 +47,140 @@ public class Main {
                     break;
                 case 3:
                     running = false;
-                    System.out.println("Saindo do jogo...");
+                    Mensageiro.exibirMensagem("Saindo do jogo...", 50);
                     break;
                 default:
-                    System.out.println("Opção inválida. Tente novamente.");
+                    Mensageiro.exibirMensagem("Opção inválida. Tente novamente.", 50);
             }
         }
 
-        console.fechar(); // Fechar o console após a interação com o usuário
+        console.fechar();
     }
 
     private static void iniciarJogo(Console console) {
-        // Leitura dos dados do jogador para criar o personagem
-        System.out.println("\nIniciando novo jogo!");
-        String nome = console.lerString("\nDigite o nome do seu personagem: ");
-        int idade = console.lerInt("\nDigite a idade do seu personagem: ");
-        String formacao = console.lerString("\nDigite a formação do seu personagem: ");
+        Mensageiro.exibirMensagem("Iniciando novo jogo!", 50);
+        String nome = console.lerString("Digite o nome do seu personagem: ");
+        int idade = console.lerInt("Digite a idade do seu personagem: ");
+        String formacao = console.lerString("Digite a formação do seu personagem: ");
 
-        // Criação do personagem com base nos inputs do jogador
         Personagem personagem = new Personagem(nome, idade, formacao);
-
-        // Criação da mochila do personagem
         Mochila mochila = new Mochila();
 
-        // Criação da sala
-        Sala sala = new Sala("\nSala Principal");
+        Sala sala1 = new SalaCasaDoProgramador(personagem);
+        Sala sala2 = new SalaRuaDeserta(personagem);
+        Sala sala3 = new SalaEstacaoMetro(personagem);
+        Sala sala4 = new SalaHospitalAbandonado(personagem);
+        Sala sala5 = new SalaRefugioSeguro(personagem);
 
-        // Criação da janela do jogo e adição dos componentes
         Display display = new Display();
         display.addComponent(personagem);
         display.addComponent(mochila);
-        display.addComponent(sala);
+        display.addComponent(sala1);
 
         boolean jogando = true;
+        int salaAtual = 0;
+        Sala[] salas = {sala1, sala2, sala3, sala4, sala5};
 
         while (jogando) {
-            // Renderização da janela do jogo
             display.render();
 
-            // Escolha do canto da sala
-            int escolha = console.lerInt("\nDigite o número da cena para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
+            int escolha = console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar, 5 para próxima sala, -1 para sair: ");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
-                salvarJogo(personagem, mochila, sala);
+                salvarJogo(personagem, mochila, salas[salaAtual]);
             } else if (escolha == 4) {
-                carregarJogo(personagem, mochila, sala);
+                carregarJogo(personagem, mochila, salas[salaAtual]);
+            } else if (escolha == 5) {
+                if (salaAtual < salas.length - 1) {
+                    salaAtual++;
+                    display.addComponent(salas[salaAtual]);
+                } else {
+                    Mensageiro.exibirMensagem("Você já está na última sala.", 50);
+                }
             } else {
-                sala.resolverCanto(escolha, mochila);
+                salas[salaAtual].resolverCanto(escolha, mochila);
             }
         }
     }
 
     private static void carregarJogoMenu(Console console) {
-        System.out.println("Carregando jogo...");
-        // Criação do personagem e outros componentes
-        Personagem personagem = new Personagem("", 0, ""); // Usando um construtor válido
+        Mensageiro.exibirMensagem("Carregando jogo...", 80);
+        Personagem personagem = new Personagem("", 0, "");
         Mochila mochila = new Mochila();
-        Sala sala = new Sala("\nSala Principal");
-
-        carregarJogo(personagem, mochila, sala);
-
-        // Continuar o jogo a partir do estado carregado
+        Sala sala = null; // Inicializa a sala como null para carregar do arquivo
+    
+        try (BufferedReader reader = new BufferedReader(new FileReader("savegame.txt"))) {
+            // Carrega o personagem, a mochila e a sala
+            personagem.carregar(reader);
+            mochila.carregar(reader);
+    
+            // Identifica o nome da sala no arquivo
+            String nomeSala = reader.readLine();
+            
+            // Determina qual tipo de sala carregar com base no nome
+            switch (nomeSala) {
+                case "Casa do Programador":
+                    sala = new SalaCasaDoProgramador(personagem);
+                    break;
+                case "Estação de Metrô":
+                    sala = new SalaEstacaoMetro(personagem);
+                    break;
+                case "Hospital Abandonado":
+                    sala = new SalaHospitalAbandonado(personagem);
+                    break;
+                case "Refúgio Seguro":
+                    sala = new SalaRefugioSeguro(personagem);
+                    break;
+                case "Rua Deserta":
+                    sala = new SalaRuaDeserta(personagem);
+                    break;
+                default:
+                    Mensageiro.exibirMensagem("Sala salva desconhecida: " + nomeSala, 50);
+                    return; // Se não reconhecer a sala, encerra o carregamento
+            }
+            
+            sala.carregar(reader); // Carrega o estado específico da sala
+    
+            Mensageiro.exibirMensagem("Jogo carregado com sucesso!", 50);
+        } catch (IOException e) {
+            Mensageiro.exibirMensagem("Erro ao carregar o jogo: " + e.getMessage(), 50);
+            return; // Em caso de erro, retorna sem inicializar o jogo
+        }
+    
         Display display = new Display();
         display.addComponent(personagem);
         display.addComponent(mochila);
         display.addComponent(sala);
-
+    
         boolean jogando = true;
-
+    
         while (jogando) {
-            // Renderização da janela do jogo
             display.render();
-
-            // Escolha do canto da sala
-            int escolha = console.lerInt("\nDigite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
+    
+            int escolha = console.lerInt("Digite o número do canto para explorar (0-2), 3 para salvar, 4 para carregar ou -1 para sair: ");
             if (escolha == -1) {
                 jogando = false;
             } else if (escolha == 3) {
                 salvarJogo(personagem, mochila, sala);
             } else if (escolha == 4) {
-                carregarJogo(personagem, mochila, sala);
+                carregarJogoMenu(console); // Reinicia o processo de carregamento
+                return; // Retorna para evitar a execução do restante do loop
             } else {
                 sala.resolverCanto(escolha, mochila);
             }
         }
     }
+    
 
     private static void carregarJogo(Personagem personagem, Mochila mochila, Sala sala) {
         try (BufferedReader reader = new BufferedReader(new FileReader("savegame.txt"))) {
             personagem.carregar(reader);
             mochila.carregar(reader);
             sala.carregar(reader);
-            System.out.println("Jogo carregado com sucesso!");
+            Mensageiro.exibirMensagem("Jogo carregado com sucesso!", 50);
         } catch (IOException e) {
-            System.out.println("Erro ao carregar o jogo: " + e.getMessage());
+            Mensageiro.exibirMensagem("Erro ao carregar o jogo: " + e.getMessage(), 50);
         }
     }
 
@@ -130,9 +189,9 @@ public class Main {
             personagem.salvar(writer);
             mochila.salvar(writer);
             sala.salvar(writer);
-            System.out.println("Jogo salvo com sucesso!");
+            Mensageiro.exibirMensagem("Jogo salvo com sucesso!", 50);
         } catch (IOException e) {
-            System.out.println("Erro ao salvar o jogo: " + e.getMessage());
+            Mensageiro.exibirMensagem("Erro ao salvar o jogo: " + e.getMessage(), 50);
         }
     }
 }
