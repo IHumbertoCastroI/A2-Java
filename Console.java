@@ -2,28 +2,34 @@ import java.util.Scanner;
 
 public class Console {
 
-    private Scanner scanner;
+    private static Scanner leitor;
 
     public Console() {
-        scanner = new Scanner(System.in);
+        leitor = new Scanner(System.in);
     }
 
     public int lerInt(String mensagem) {
         System.out.print(mensagem);
-        while (!scanner.hasNextInt()) {
+        while (!leitor.hasNextInt()) {
             System.out.println("Entrada inválida. Por favor, insira um número inteiro.");
-            scanner.next(); // Limpa a entrada inválida
+            leitor.next(); // Limpa a entrada inválida
             System.out.print(mensagem);
         }
-        return scanner.nextInt();
+        int valor = leitor.nextInt();
+        leitor.nextLine();
+        return valor;
     }
 
     public String lerString(String mensagem) {
         System.out.print(mensagem);
-        return scanner.next();
+        return leitor.next();
     }
 
     public void fechar() {
-        scanner.close();
+        leitor.close();
+    }
+
+    public static String nextLine() {
+        return leitor.nextLine();
     }
 }
