@@ -2,51 +2,38 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class Personagem implements Renderable, Saveable {
+public class Personagem implements Saveable, Renderable {
     private String nome;
-    private int idade;
-    private String formacao;
+    private int Idade;
+    private String Profissão;
 
-    public Personagem(String nome, int idade, String formacao) {
+    public Personagem(String nome, int Idade, String classe) {
         this.nome = nome;
-        this.idade = idade;
-        this.formacao = formacao;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public String getFormacao() {
-        return formacao;
-    }
-
-    @Override
-    public void renderizar() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Idade: " + idade);
-        System.out.println("Formação: " + formacao);
+        this.Idade = Idade;
+        this.Profissão = classe;
     }
 
     @Override
     public void salvar(BufferedWriter writer) throws IOException {
-        writer.write("Personagem\n");
         writer.write(nome + "\n");
-        writer.write(idade + "\n");
-        writer.write(formacao + "\n");
+        writer.write(Idade + "\n");
+        writer.write(Profissão + "\n");
     }
 
     @Override
     public void carregar(BufferedReader reader) throws IOException {
-        String line = reader.readLine();
-        if (line.equals("Personagem")) {
-            nome = reader.readLine();
-            idade = Integer.parseInt(reader.readLine());
-            formacao = reader.readLine();
-        }
+        nome = reader.readLine();
+        Idade = Integer.parseInt(reader.readLine());
+        Profissão = reader.readLine();
+    }
+
+    @Override
+    public void renderizar() {
+        System.out.println("Personagem: " + nome + ", Idade: " + Idade + ", Profissão: " + Profissão);
+    }
+
+    @Override
+    public String toString() {
+        return "Personagem{" + "nome='" + nome + '\'' + ", idade=" + Idade + ", profissão='" + Profissão + '\'' + '}';
     }
 }

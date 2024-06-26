@@ -4,52 +4,48 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mochila implements Renderable, Saveable {
+public class Mochila implements Saveable, Renderable {
     private List<String> itens;
 
     public Mochila() {
-        this.itens = new ArrayList<>();
+        itens = new ArrayList<>();
     }
 
     public void adicionarItem(String item) {
         itens.add(item);
     }
 
-    public void removerItem(String item) {
-        itens.remove(item);
-    }
-
-    public List<String> getItens() {
-        return itens;
-    }
-
-    @Override
-    public void renderizar() {
-        System.out.println("\nMochila:");
-        for (String item : itens) {
-            System.out.println("- " + item);
-        }
-    }
-
     @Override
     public void salvar(BufferedWriter writer) throws IOException {
-        writer.write("\nMochila\n");
+        writer.write(itens.size() + "\n");
         for (String item : itens) {
             writer.write(item + "\n");
         }
-        writer.write("\n");
     }
 
     @Override
     public void carregar(BufferedReader reader) throws IOException {
-        String line;
-        itens.clear();
-        while ((line = reader.readLine()) != null && !line.isEmpty()) {
-            itens.add(line);
+        int tamanho = Integer.parseInt(reader.readLine());
+        itens = new ArrayList<>();
+        for (int i = 0; i < tamanho; i++) {
+            itens.add(reader.readLine());
         }
     }
 
-    public void atualizar() {
-        // Implementação para atualizar o estado da mochila, se necessário
+    @Override
+    public void renderizar() {
+        System.out.println("Mochila:");
+        if (itens.isEmpty()) {
+            System.out.println("  (vazia)");
+        } else {
+            for (String item : itens) {
+                System.out.println("  - " + item);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Mochila{" + "itens=" + itens + '}';
     }
 }
